@@ -6,15 +6,17 @@ from constants import SCREEN_WIDTH, SCREEN_HEIGHT, ASTEROID_MIN_RADIUS, ASTEROID
 
 def main():
     pygame.init()
-    print("Starting asteroids!")
-    print(f"Screen width: {SCREEN_WIDTH}\nScreen height: {SCREEN_HEIGHT}")
+    #rint("Starting asteroids!")
+    #print(f"Screen width: {SCREEN_WIDTH}\nScreen height: {SCREEN_HEIGHT}")
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    
     while (True):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
+            
         screen.fill("Black")
-    screen.flip()
+        screen.flip()
 
 if __name__ == "__main__":
     main()
