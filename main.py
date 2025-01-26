@@ -9,16 +9,17 @@ def main():
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     clock = pygame.time.Clock()
+    player_ship = player.Player(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
     dt = 0
-    player_ship = player.Player(x=SCREEN_WIDTH/2, y=SCREEN_HEIGHT/2)
 
     while (True):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
             
-        screen.fill("Black")
-        player.draw(screen)
+        screen.fill("black")
+        player_ship.update(dt=dt)
+        player_ship.draw(screen)
         pygame.display.flip()
 
         # limit the framerate to 60 FPS
